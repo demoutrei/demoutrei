@@ -1,5 +1,7 @@
 :root {
   --color-chinese-black: #161616;
+  --color-dark-cyan: #202121;
+  --color-dreamless-sleep: #101111;
   --color-primary: black;
   --color-vampire-black: #0b0b0b;
 }
@@ -17,6 +19,7 @@ body {
     border-radius: 13px;
     height: 80vh;
     left: 50%;
+    overflow-x: clip;
     overflow-y: auto;
     position: absolute;
     top: 50%;
@@ -73,6 +76,97 @@ body {
         #username {
           font-family: arial;
           font-size: 2.25em;
+        }
+      }
+    }
+
+    #body {
+      background-color: inherit;
+      display: grid;
+      gap: 2.4em;
+      height: max-content;
+      padding-bottom: 2em;
+      width: 100%;
+
+      
+      .section {
+        background-color: var(--color-dreamless-sleep);
+        border-radius: 1em;
+        justify-self: center;
+        padding: 1.5em 4em;
+        width: 75%;
+
+        #title {
+          color: gray;
+          display: inline-block;
+          font-family: sans-serif;
+          font-size: 2em;
+          font-weight: bold;
+          left: -0.7em;
+          position: relative;
+        }
+
+        .divider {
+          background-color: var(--color-dark-cyan);
+          border: none;
+          height: 0.2em;
+        }
+      }
+      
+      
+      #about-me {
+        #content {
+          color: white;
+          font-family: arial;
+          font-size: 2.2em;
+        }
+      }
+
+      #connections {
+        .connection {
+          background-color: inherit;
+          display: flex;
+          flex-direction: row;
+          height: max-content;
+          position: relative;
+          width: 100%;
+
+          .icon {
+            align-items: center;
+            background-color: inherit;
+            display: flex;
+            justify-content: center;
+            height: 7em;
+            width: 7em;
+            
+            .image {
+              border-radius: 25%;
+              max-width: 100%;
+              width: 5em;
+            }
+          }
+
+          .name {
+            align-self: center;
+            background-color: inherit;
+            height: max-content;
+
+            .content {
+              color: white;
+              font-family: serif;
+              font-size: 2.3em;
+              text-decoration: none;
+            }
+          }
+
+          .external {
+            align-self: center;
+            background-color: inherit;
+            color: white;
+            font-size: 3em;
+            position: absolute;
+            right: 0;
+          }
         }
       }
     }
