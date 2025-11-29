@@ -1,0 +1,80 @@
+:root {
+  --color-chinese-black: #161616;
+  --color-primary: black;
+  --color-vampire-black: #0b0b0b;
+}
+
+
+body {
+  background-color: var(--color-primary);
+  margin: 0;
+}
+
+@media screen and (width >= 320px) {
+  #container {
+    background-color: var(--color-chinese-black);
+    border: 2px solid white;
+    border-radius: 13px;
+    height: 80vh;
+    left: 50%;
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 85vw;
+
+    #header {
+      background-color: inherit;
+      border-radius: 13px 13px 0 0;
+      box-sizing: auto;
+      height: max-content;
+      width: 100%;
+      
+      #banner {
+        aspect-ratio: 16/9;
+        background-color: var(--color-primary);
+        border-radius: inherit;
+        width: 100%;
+      }
+
+      #icon {
+        background-color: inherit;
+        border: 1em solid;
+        border-color: var(--color-chinese-black);
+        border-radius: 50%;
+        display: flex;
+        height: max-content;
+        left: 4em;
+        position: absolute;
+        top: 21.8em;
+        width: max-content;
+
+        #image {
+          border-radius: 50%;
+          max-width: 100%;
+          position: relative;
+          width: 13em;
+        }
+      }
+
+      #name {
+        color: white;
+        left: 4em;
+        padding-bottom: 1em;
+        padding-top: 7em;
+        position: relative;
+
+        #display-name {
+          font-family: sans-serif;
+          font-weight: bold;
+          font-size: 4em;
+        }
+
+        #username {
+          font-family: arial;
+          font-size: 2.25em;
+        }
+      }
+    }
+  }
+}
