@@ -1,8 +1,10 @@
+const friendsModal = document.getElementById("friends-modal");
+
+function friendsClose() {
+  friendsModal.classList.remove("show");
+}
+
+
 function friendsDisplay() {
-  console.log("Friends Display");
-};
-
-
-function worksDisplay() {
-  console.log("Works Display");
+  friendsModal.classList.add("show");
 };

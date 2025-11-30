@@ -25,6 +25,7 @@ body {
     top: 50%;
     transform: translate(-50%, -50%);
     width: 85vw;
+    z-index: -1;
 
     #header {
       background-color: inherit;
@@ -202,6 +203,40 @@ body {
           font-weight: bold;
         }
       }
+    }
+  }
+
+  .modal {
+    background-color: var(--color-chinese-black);
+    border: 2px solid white;
+    border-radius: 13px;
+    box-sizing: auto;
+    display: none;
+    height: 93vh;
+    left: 50%;
+    overflow-x: clip;
+    overflow-y: auto;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 86vw;
+    z-index: 0;
+
+    &.show {
+      display: block;
+    }
+
+    .close-modal {
+      background-color: inherit;
+      border: none;
+      color: white;
+      font-family: arial;
+      font-size: 3em;
+      font-weight: bold;
+      left: 0.5em;
+      max-width: 100%;
+      position: absolute;
+      top: 0.5em;
     }
   }
 }
