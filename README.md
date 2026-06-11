@@ -1,7 +1,7 @@
 <h1 align="center">demoutrei</h1>
 <p align="center">Solo Pithon programmer</p>
 
-
-<figure>
-  <img src="https://wakatime.com/share/@demoutrei/3b68536e-4746-4200-8a4a-b732f1d12673.svg">
-</figure>
+<div align="center">
+  <img src="https://wakatime.com/share/@demoutrei/c09a68c0-e3be-485b-9e8d-df674836d7ff.svg"/>
+  <img src="https://wakatime.com/share/@demoutrei/f599e2dd-a78d-4eca-b435-7c370ab83385.svg">
+</div>
