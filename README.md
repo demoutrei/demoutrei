@@ -3,5 +3,5 @@
 
 <div align="center">
   <img src="https://wakatime.com/share/@demoutrei/c09a68c0-e3be-485b-9e8d-df674836d7ff.svg"/>
-  <img src="https://wakatime.com/share/@demoutrei/f599e2dd-a78d-4eca-b435-7c370ab83385.svg">
+  <img src="https://wakatime.com/share/@demoutrei/231457b5-c4a1-4f51-846c-a7339b21f8e2.svg">
 </div>
