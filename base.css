@@ -2,6 +2,7 @@
 
 
 :root {
+  --accent-color: #3ba55c;
   --background-primary: black;
   --text-primary: #FFF8E7;
 }
@@ -19,4 +20,43 @@ body {
   color: var(--text-primary);
   font-family: "Rubik";
   margin: 0;
+}
+
+
+#guildsList {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: 5px;
+  margin-left: 5px;
+  padding: 5px 3px;
+  width: 45px;
+
+  > #separator {
+    border-color: gray;
+    margin: 0;
+    width: 80%;
+  }
+
+  > .guild {
+    aspect-ratio: 1 / 1;
+    background-color: #161616;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 13px;
+    cursor: pointer;
+    transition: 0.15s;
+    width: 90%;
+    
+    &:hover {
+      background-color: #3ba55c;
+    }
+    
+    &#__home__ {
+      background-image: url("assets/discord__white.png");
+      background-size: 67%;
+    }
+  }
 }

@@ -1,11 +1,1 @@
 @import url("base.css");
-
-
-div {
-  box-sizing: border-box;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: max-content;
-}
