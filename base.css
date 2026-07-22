@@ -4,6 +4,7 @@
 :root {
   --accent-color: #3ba55c;
   --background-primary: black;
+  --margin-top: 5px;
   --text-primary: #FFF8E7;
 }
 
@@ -18,8 +19,11 @@ body {
   background-color: var(--background-primary);
   box-sizing: border-box;
   color: var(--text-primary);
+  display: flex;
+  flex-direction: row;
   font-family: "Rubik";
   margin: 0;
+  overflow: clip;
 }
 
 
@@ -28,8 +32,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  margin-top: 5px;
   margin-left: 5px;
+  margin-right: 5px;
+  margin-top: var(--margin-top);
   padding: 5px 3px;
   width: 45px;
 
@@ -51,12 +56,28 @@ body {
     width: 90%;
     
     &:hover {
-      background-color: #3ba55c;
+      background-color: var(--accent-color);
     }
     
     &#__home__ {
       background-image: url("assets/discord__white.png");
       background-size: 67%;
     }
+
+    &.selected {
+      background-color: var(--accent-color);
+    }
   }
+}
+
+
+#mainBody {
+  border: solid white;
+  border-top-left-radius: 13px;
+  border-width: 1px 0 0 1px;
+  height: calc(100dvh - var(--margin-top) - 1px);
+  margin-top: var(--margin-top);
+  overflow-x: clip;
+  overflow-y: auto;
+  width: calc(100dvw - 50px);
 }

@@ -1,1 +1,68 @@
 @import url("base.css");
+
+
+#mainBody {
+  
+  > header {
+    display: flex;
+    flex-direction: row;
+    gap: 18px;
+    /* justify-content: center; */
+    margin-top: 20px;
+    padding: 0 35px;
+
+    #profilePicture {
+      aspect-ratio: 1 / 1;
+      border-radius: 50%;
+      width: 80px;
+    }
+
+    #username::before {
+      content: "@";
+    }
+
+    > div {
+      display: flex;
+      
+      &#infoDiv {
+        flex-direction: column;
+        justify-content: center;
+
+        > #displayName {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  > #mainContent {
+    section {
+      background-color: #0A0A0A;
+      border-radius: 23px;
+      justify-self: center;
+      padding: 13px 3px;
+      position: relative;
+      width: 90%;
+      
+      &#wakaTimeStats {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+  
+        > #wakaTimeStatsLanguages {
+          height: 400px;
+        }
+      }
+
+      > .section-title {
+        font-size: 1.2rem;
+        font-weight: bold;
+        left: 15px;
+        position: absolute;
+        top: 15px;
+        width: max-content;
+      }
+    }
+  }
+}
