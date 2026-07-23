@@ -2,14 +2,14 @@
 
 
 #mainBody {
+  padding-top: 15px;
   
   > header {
     display: flex;
     flex-direction: row;
     gap: 18px;
-    margin-top: 20px;
     padding: 0 35px;
-
+    
     #profilePicture {
       align-self: center;
       aspect-ratio: 1 / 1;
@@ -18,21 +18,58 @@
       width: 80px;
     }
 
-    #username::before {
-      content: "@";
-    }
-
     > div {
+      align-self: center;
       display: flex;
-      
-      &#infoDiv {
-        flex-direction: column;
-        justify-content: center;
+      flex-direction: column;
+      height: max-content;
 
-        > #displayName {
-          margin: 0;
+      #displayName {
+        margin: 0;
+      }
+
+      > div {
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+
+        #username {
+          margin-right: 8px;
+          width: max-content;
+
+          &::before {
+            content: "@";
+          }
+        }
+
+        .connection {
+          aspect-ratio: 1 / 1;
+          cursor: pointer;
+          width: 25px;
         }
       }
+      
+      /* > #connectionsDiv {
+        height: max-content;
+
+        .connection {
+          aspect-ratio: 1 / 1;
+          cursor: pointer;
+          width: 30px;
+        }
+      }
+
+      #displayName {
+        margin: 0;
+      }
+
+      #username {
+        width: max-content;
+        
+        &::before {
+          content: "@";
+        }
+      } */
     }
   }
 
@@ -45,7 +82,7 @@
       padding: 13px 3px;
       padding-top: 40px;
       position: relative;
-      width: 90%;
+      width: max(750px);
       
       &#wakaTimeStats {
         align-items: center;
