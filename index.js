@@ -1,3 +1,3 @@
-document.querySelector("#githubConnection").addEventListener("click", (_) => {
-  window.open('https://github.com/demoutrei', "_blank");
-})
+document.querySelector("#project-demoutreiDiscord-title").addEventListener("click", (_) => window.open('https://democord.readthedocs.io', "_blank"));
+
+document.querySelector("#project-demoutreiDiscord-redirect").addEventListener("click", (_) => window.open('https://democord.readthedocs.io', "_blank"));

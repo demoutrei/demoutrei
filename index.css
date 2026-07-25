@@ -1,109 +1,160 @@
-@import url("base.css");
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 
-#mainBody {
-  padding-top: 15px;
+:root {
+  --accent-color: #3ba55c;
+  --background-primary: black;
+  --margin-top: 15px;
+  --text-primary: #FFF8E7;
+}
+
+
+html {
+  height: 100dvh;
+  width: 100dvw;
+}
+
+
+body {
+  background-color: var(--background-primary);
+  box-sizing: border-box;
+  color: var(--text-primary);
+  display: flex;
+  flex-direction: column;
+  font-family: "Rubik";
+  margin: 0;
+  overflow-x: clip;
+  overflow-y: auto;
+  padding: var(--margin-top);
+}
+
+
+#heading {
+  background-color: var(--background-primary);
+  border-bottom: 1px solid gray;
+  display: flex;
+  flex-direction: row;
+  gap: 18px;
+  margin-bottom: 15px;
+  padding: 0 20px 15px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
   
-  > header {
+  #profilePicture {
+    align-self: center;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    height: max-content;
+    width: 80px;
+  }
+
+  > div {
+    align-self: center;
     display: flex;
-    flex-direction: row;
-    gap: 18px;
-    padding: 0 35px;
-    
-    #profilePicture {
-      align-self: center;
-      aspect-ratio: 1 / 1;
-      border-radius: 50%;
-      height: max-content;
-      width: 80px;
+    flex-direction: column;
+    height: max-content;
+
+    #displayName {
+      margin: 0;
     }
 
     > div {
-      align-self: center;
+      align-items: center;
       display: flex;
-      flex-direction: column;
-      height: max-content;
-
-      #displayName {
-        margin: 0;
-      }
-
-      > div {
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-
-        #username {
-          margin-right: 8px;
-          width: max-content;
-
-          &::before {
-            content: "@";
-          }
-        }
-
-        .connection {
-          aspect-ratio: 1 / 1;
-          cursor: pointer;
-          width: 25px;
-        }
-      }
-      
-      /* > #connectionsDiv {
-        height: max-content;
-
-        .connection {
-          aspect-ratio: 1 / 1;
-          cursor: pointer;
-          width: 30px;
-        }
-      }
-
-      #displayName {
-        margin: 0;
-      }
+      flex-direction: row;
 
       #username {
+        margin-right: 8px;
         width: max-content;
-        
+
         &::before {
           content: "@";
         }
-      } */
+      }
+
+      .connection {
+        aspect-ratio: 1 / 1;
+        cursor: pointer;
+        width: 25px;
+      }
     }
   }
+}
 
-  > #mainContent {
-    section {
-      background-color: #0A0A0A;
-      border-radius: 23px;
-      justify-self: center;
-      overflow-x: clip;
-      padding: 13px 3px;
-      padding-top: 40px;
-      position: relative;
-      width: max(750px);
-      
-      &#wakaTimeStats {
-        align-items: center;
+#mainContent {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  
+  section {
+    background-color: #0A0A0A;
+    border-radius: 23px;
+    justify-self: center;
+    overflow-x: clip;
+    padding: 20px;
+    padding-top: 45px;
+    position: relative;
+    width: max(90%);
+
+    &#projects {
+      display: flex;
+      flex-direction: column;
+
+      > .project {
         display: flex;
         flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-  
-        > #wakaTimeStatsLanguages {
-          max-height: 400px;
+        gap: 10px;
+        position: relative;
+        width: 100%;
+
+        .project-icon {
+          aspect-ratio: 1 / 1;
+          height: 65px;
+          width: max-content;
+        }
+
+        .project-redirect {
+          aspect-ratio: 1 / 1;
+          cursor: pointer;
+          height: 30px;
+          position: absolute;
+          right: 0;
+        }
+        
+        .project-title {
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 1.5rem;
+
+          &:hover {
+            color: var(--accent-color);
+            transition: 0.15s;
+          }
         }
       }
+    }
+    
+    &#wakaTimeStats {
+      align-items: center;
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
 
-      > .section-title {
-        font-size: 1.2rem;
-        font-weight: bold;
-        left: 15px;
-        position: absolute;
-        top: 15px;
-        width: max-content;
+      > #wakaTimeStatsLanguages {
+        max-height: 400px;
       }
+    }
+
+    > .section-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      left: 20px;
+      position: absolute;
+      top: 15px;
+      width: max-content;
     }
   }
 }
