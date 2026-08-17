@@ -13,7 +13,7 @@ author = 'Demoutrei Kurosuke'
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["shibuya"]
+extensions = [ "shibuya", "sphinx_design" ]
 
 templates_path = ['_templates']
 exclude_patterns = []
@@ -24,6 +24,7 @@ exclude_patterns = []
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
 
 html_theme = 'shibuya'
+html_title = "demoutrei"
 html_theme_options = {
   "accent_color": "demoutrei"
 }
