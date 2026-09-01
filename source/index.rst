@@ -19,4 +19,4 @@ Solo Python programmer .-.
    :maxdepth: 2
 
    projects
-   wakatime
+   wakatime-stats
