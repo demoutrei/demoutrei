@@ -26,7 +26,13 @@ exclude_patterns = []
 html_theme = 'shibuya'
 html_title = "demoutrei"
 html_theme_options = {
-  "accent_color": "demoutrei"
+  "accent_color": "demoutrei",
+  "nav_links": [
+    {
+      "title": "GuideBooks",
+      "url": "https://guides.demoutrei.dev"
+    }
+  ]
 }
 html_static_path = ['_static']
 html_css_files = ["custom.css"]
