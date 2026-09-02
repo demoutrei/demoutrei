@@ -26,7 +26,12 @@ exclude_patterns = []
 html_theme = 'shibuya'
 html_title = "demoutrei"
 html_theme_options = {
-  "accent_color": "demoutrei",
+  "accent_color": "green",
+  "color_mode": "dark",
+  "globaltoc_expand_depth": 1,
+  "toctree_collapse": True,
+  "toctree_maxdepth": 5,
+  "show_ai_links": False,
   "nav_links": [
     {
       "title": "GuideBooks",
