@@ -36,6 +36,10 @@ html_theme_options = {
     {
       "title": "GuideBooks",
       "url": "https://guides.demoutrei.dev"
+    },
+    {
+      "title": "Utilities",
+      "url": "https://utils.demoutrei.dev"
     }
   ]
 }
