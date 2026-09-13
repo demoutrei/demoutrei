@@ -1,4 +1,4 @@
-:cover: https://wakatime.com/share/@demoutrei/3eced2c9-442a-4483-8506-a2f7f4aebda9.png
+:cover: https://wakatime.com/share/@demoutrei/9a5045b0-0bd7-4e2f-8363-001905e09df2.png
 
 
 WakaTime Stats
