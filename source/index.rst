@@ -8,17 +8,16 @@
         "components": [
           {
             "type": 10,
+            "content": "What do I put here?"
+          },
+          {
+            "type": 1,
             "components": [
               {
-                "type": 1,
-                "components": [
-                  {
-                    "type": 2,
-                    "style": 5,
-                    "url": "https://guides.demoutrei.dev",
-                    "label": "Guidebooks"
-                  }
-                ]
+                "type": 2,
+                "style": 5,
+                "url": "https://guides.demoutrei.dev",
+                "label": "Guidebooks"
               }
             ]
           }
