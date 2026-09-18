@@ -4,7 +4,7 @@
     {
       "component": {
         "type": 17,
-        "accent_color": 5793266,
+        "accent_color": 3908956,
         "components": [
           {
             "type": 10,
