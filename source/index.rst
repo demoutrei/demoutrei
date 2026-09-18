@@ -1,3 +1,33 @@
+ raw:: html
+
+    <script id="discord:component-embed" type="application/json">
+    {
+      "component": {
+        "type": 17,
+        "accent_color": 5793266,
+        "components": [
+          {
+            "type": 10,
+            "components": [
+              {
+                "type": 1,
+                "components": [
+                  {
+                    "type": 2,
+                    "style": 5,
+                    "url": "https://guides.demoutrei.dev",
+                    "label": "Guidebooks"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    }
+    </script>
+
+
 .. demoutrei documentation master file, created by
    sphinx-quickstart on Sun Jul 26 13:36:18 2026.
    You can adapt this file completely to your liking, but it should at least
