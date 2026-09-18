@@ -1,4 +1,4 @@
- raw:: html
+.. raw:: html
 
     <script id="discord:component-embed" type="application/json">
     {
