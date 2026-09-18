@@ -7,8 +7,19 @@
         "accent_color": 3908956,
         "components": [
           {
-            "type": 10,
-            "content": "What do I put here?"
+            "type": 9,
+            "components": [
+              {
+                "type": 10,
+                "content": "Why do I even bother web-deving?"
+              }
+            ],
+            "accessory": {
+              "type": 11,
+              "media": {
+                "url": "https://cdn.discordapp.com/embed/avatars/2.png"
+              }
+            }
           },
           {
             "type": 1,
