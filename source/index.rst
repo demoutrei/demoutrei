@@ -112,3 +112,7 @@ Tech Stack
             .. grid-item-card:: Workers
 
                 Cloudflare Workers are fast, elastic, and serverless functions that scale automatically from zero to millions of requests.
+
+            .. grid-item-card:: Pages
+
+                Cloudflare Pages is a serverless platform that lets you build, collaborate, test, and deploy applications quickly.
