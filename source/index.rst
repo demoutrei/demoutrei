@@ -56,10 +56,12 @@ Solo Python programmer .-.
 
 
 .. toctree::
-   :maxdepth: 2
+    :hidden:
+    :maxdepth: 2
 
-   projects
-   wakatime-stats
+    projects
+    wakatime-stats
+    tetris
 
 
 Tech Stack

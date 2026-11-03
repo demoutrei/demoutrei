@@ -68,3 +68,101 @@ html.dark {
     }
   }
 }
+
+
+#tetris {
+  border: 1px solid white;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-evenly;
+  position: relative;
+
+  > #container-start {
+    align-items: center;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 20;
+
+    > h1 {
+      color: #00f0f0;
+      font-size: 28px;
+      letter-spacing: 2px;
+      margin-bottom: 5px;
+    }
+
+    > #button-start {
+      background: #00f0f0;
+      border: none;
+      border-radius: 4px;
+      color: black;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      padding: 12px 28px;
+    }
+  }
+
+  > #container-gameOver {
+    align-items: center;
+    color: white;
+    display: none;
+    flex-direction: column;
+    font-family: sans-serif;
+    height: 100%;
+    justify-content: center;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+
+    > #button-restart {
+      background: #00f0f0;
+      border: none;
+      border-radius: 4px;
+      color: black;
+      cursor: pointer;
+      font-weight: bold;
+      padding: 10px 20px;
+    }
+  }
+  
+  > #canvas-main {
+    background-color: black;
+    border: 1px solid white;
+    box-sizing: border-box;
+  }
+
+  > #container-sidebar {
+    box-sizing: border-box;
+    height: 480px;
+    padding: 20px;
+    position: relative;
+    
+    > #container-sidebarNext {
+      align-items: center;
+      box-sizing: border-box;
+      display: flex;
+      flex-direction: column;
+
+      > #text-sidebarNextTitle {
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      #canvas-next {
+        background-color: black;
+        border: 1px solid white;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
