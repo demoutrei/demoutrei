@@ -27,6 +27,10 @@ Play Tetris
             <span id="title-score">Score:</span>
             <span id="text-score">0</span>
           </div>
+          <div id="container-level">
+            <span id="title-level">Level:</span>
+            <span id="text-level">1</span>
+          </div>
           <div id="container-lines">
             <span id="title-lines">Lines:</span>
             <span id="text-lines">0</span>
@@ -113,7 +117,8 @@ Play Tetris
         piece: null,
         nextPiece: null,
         score: 0,
-        lines: 0
+        lines: 0,
+        level: 1
       };
 
       let dropCounter = 0;
@@ -133,6 +138,9 @@ Play Tetris
 
       let isGameOver = false;
       let isGameStarted = false;
+
+      let lockCounter = 0;
+      const LOCK_DELAY = 2000;
 
       function collide(matrix, player) {
         for (let y = 0; y < player.piece.length; ++y) {
@@ -157,6 +165,11 @@ Play Tetris
           player.score += rowCount * 10;
           player.lines++;
           rowCount *= 2;
+          const newLevel = Math.floor(player.lines / 10) + 1;
+          if (newLevel !== player.level) {
+            player.level = newLevel;
+            updateDropInterval();
+          }
           updateScore();
         }
       }
@@ -240,16 +253,18 @@ Play Tetris
             return;
           }
         }
+        lockCounter = 0;
       }
 
       function pieceDrop() {
         player.position.y++;
-        if (collide(matrix, player)) {
-          player.position.y--;
-          merge(matrix, player);
-          playerReset();
-          matrixSweep();
+        const isGrounded = collide(matrix, player);
+        player.position.y--;
+        if (isGrounded) {
+          dropCounter = 0;
+          return;
         }
+        player.position.y++;
         dropCounter = 0;
       }
 
@@ -257,6 +272,8 @@ Play Tetris
         player.position.x += direction;
         if (collide(matrix, player)) {
           player.position.x -= direction;
+        } else {
+          lockCounter = 0;
         }
       }
 
@@ -274,13 +291,11 @@ Play Tetris
         player.position.y = 0;
         player.position.x = Math.floor(matrix[0].length / 2) - Math.floor(player.piece[0].length / 2);
 
+        lockCounter = 0;
+
         if (collide(matrix, player)) {
           isGameOver = true;
           document.querySelector("#container-gameOver").style.display = "flex";
-          // matrix.forEach(row => row.fill(0));
-          // player.score = 0;
-          // player.lines = 0;
-          // updateScore();
         }
       }
 
@@ -295,12 +310,31 @@ Play Tetris
           pieceDrop();
         }
 
-        if (keysPressed.ArrowLeft || keysPressed.ArrowRight) {
+        player.position.y++;
+        const isGrounded = collide(matrix, player);
+        player.position.y--;
+
+        if (isGrounded) {
+          lockCounter += deltaTime;
+          if (LOCK_DELAY <= lockCounter) {
+            merge(matrix, player);
+            playerReset();
+            matrixSweep();
+          }
+        } else {
+          lockCounter = 0;
+        }
+
+        if (keysPressed.ArrowLeft || keysPressed.ArrowRight || keysPressed.ArrowDown) {
           dasCounter += deltaTime;
           if (DAS_DELAY <= dasCounter) {
             arrCounter += deltaTime;
             if (ARR_RATE <= arrCounter) {
-              pieceMove(currentDirection);
+              if (keysPressed.ArrowDown) {
+                pieceDrop();
+              } else {
+                pieceMove(currentDirection);
+              }
               arrCounter = 0;
             }
           }
@@ -313,6 +347,11 @@ Play Tetris
       function updateScore() {
         document.querySelector("#text-score").innerText = player.score;
         document.querySelector("#text-lines").innerText = player.lines;
+        document.querySelector("#text-level").innerText = player.level;
+      }
+
+      function updateDropInterval() {
+        dropInterval = Math.max(60, 1000 - (player.level - 1) * 75);
       }
 
       document.addEventListener('keydown', event => {
@@ -370,6 +409,7 @@ Play Tetris
         matrix.forEach(row => row.fill(0));
         player.score = 0;
         player.lines = 0;
+        player.level = 1;
         updateScore();
         document.querySelector("#container-gameOver").style.display = "none";
         isGameOver = false;
