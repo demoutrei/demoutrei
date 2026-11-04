@@ -140,7 +140,7 @@ Play Tetris
       let isGameStarted = false;
 
       let lockCounter = 0;
-      const LOCK_DELAY = 2000;
+      const LOCK_DELAY = 1000;
 
       function collide(matrix, player) {
         for (let y = 0; y < player.piece.length; ++y) {
@@ -305,9 +305,12 @@ Play Tetris
         const deltaTime = time - lastTime;
         lastTime = time;
 
+        let alreadyDropped = false;
+
         dropCounter += deltaTime;
-        if (dropCounter > dropInterval) {
+        if (dropCounter > dropInterval && !keysPressed.ArrowDown) {
           pieceDrop();
+          alreadyDropped = true;
         }
 
         player.position.y++;
@@ -330,8 +333,9 @@ Play Tetris
           if (DAS_DELAY <= dasCounter) {
             arrCounter += deltaTime;
             if (ARR_RATE <= arrCounter) {
-              if (keysPressed.ArrowDown) {
+              if (keysPressed.ArrowDown && !alreadyDropped) {
                 pieceDrop();
+                alreadyDropped = true;
               } else {
                 pieceMove(currentDirection);
               }
@@ -389,7 +393,7 @@ Play Tetris
           arrCounter = 0;
         } else if (event.key === "ArrowDown") {
           keysPressed.ArrowDown = true;
-          pieceDrop();
+          // pieceDrop();
         }
       });
 
