@@ -410,6 +410,7 @@ Play Tetris
         player.score = 0;
         player.lines = 0;
         player.level = 1;
+        dropInterval = 1000;
         updateScore();
         document.querySelector("#container-gameOver").style.display = "none";
         isGameOver = false;
