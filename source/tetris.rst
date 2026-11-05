@@ -368,6 +368,9 @@ Play Tetris
         if (event.key === "ArrowUp") {
           pieceRotate(1);
           return;
+        } else if (event.key === "z") {
+          pieceRotate(-1);
+          return;
         } else if (event.key === " ") {
           while (!collide(matrix, player)) {
             player.position.y++;
