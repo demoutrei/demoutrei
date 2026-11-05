@@ -37,8 +37,10 @@ Play Tetris
           </div>
           <div id="container-controls">
             <p>
-              Use Arrow Keys to Move/Rotate<br>
-              Spacebar to Hard Drop
+              Left/right arrow keys to move<br>
+              Up arrow key to rotate clockwise<br>
+              Z key to rotate counterclockwise<br>
+              Spacebar to hard drop
             </p>
           </div>
         </div>
