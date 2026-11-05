@@ -120,11 +120,9 @@ Play Tetris
         lines: 0,
         level: 1
       };
-
       let dropCounter = 0;
       let dropInterval = 1000;
       let lastTime = 0;
-
       const keysPressed = {
         ArrowLeft: false,
         ArrowRight: false,
@@ -135,12 +133,12 @@ Play Tetris
       let dasCounter = 0;
       let arrCounter = 0;
       let currentDirection = 0;
-
       let isGameOver = false;
       let isGameStarted = false;
-
       let lockCounter = 0;
       const LOCK_DELAY = 1000;
+      let currentPiece = null;
+      let nextPiece = null;
 
       function collide(matrix, player) {
         for (let y = 0; y < player.piece.length; ++y) {
@@ -281,18 +279,26 @@ Play Tetris
         return matrix.map(row => [...row]);
       }
 
-      function playerReset() {
+      function randomPiece() {
         const pieces = "ILJOSZT";
-        if (!player.nextPiece) {
-          player.nextPiece = cloneMatrix(PIECES[pieces[Math.floor(Math.random() * pieces.length)]]);
+        return pieces[Math.floor(Math.random() * pieces.length)];
+      }
+
+      function playerReset() {
+        if (!nextPiece) {
+          nextPiece = randomPiece();
+          player.nextPiece = cloneMatrix(PIECES[nextPiece]);
         }
         player.piece = player.nextPiece;
-        player.nextPiece = cloneMatrix(PIECES[pieces[Math.floor(Math.random() * pieces.length)]]);
+        currentPiece = nextPiece;
+        nextPiece = randomPiece();
+        while (nextPiece === currentPiece) {
+          nextPiece = randomPiece();
+        }
+        player.nextPiece = cloneMatrix(PIECES[nextPiece]);
         player.position.y = 0;
         player.position.x = Math.floor(matrix[0].length / 2) - Math.floor(player.piece[0].length / 2);
-
         lockCounter = 0;
-
         if (collide(matrix, player)) {
           isGameOver = true;
           document.querySelector("#container-gameOver").style.display = "flex";
@@ -301,22 +307,17 @@ Play Tetris
 
       function update(time = 0) {
         if (isGameOver || !isGameStarted) return;
-      
         const deltaTime = time - lastTime;
         lastTime = time;
-
         let alreadyDropped = false;
-
         dropCounter += deltaTime;
         if (dropCounter > dropInterval && !keysPressed.ArrowDown) {
           pieceDrop();
           alreadyDropped = true;
         }
-
         player.position.y++;
         const isGrounded = collide(matrix, player);
         player.position.y--;
-
         if (isGrounded) {
           lockCounter += deltaTime;
           if (LOCK_DELAY <= lockCounter) {
@@ -327,7 +328,6 @@ Play Tetris
         } else {
           lockCounter = 0;
         }
-
         if (keysPressed.ArrowLeft || keysPressed.ArrowRight || keysPressed.ArrowDown) {
           dasCounter += deltaTime;
           if (DAS_DELAY <= dasCounter) {
@@ -343,7 +343,6 @@ Play Tetris
             }
           }
         }
-
         draw();
         requestAnimationFrame(update);
       }
@@ -364,7 +363,6 @@ Play Tetris
           event.preventDefault();
         }
         if (event.repeat) return;
-
         if (event.key === "ArrowUp") {
           pieceRotate(1);
           return;
@@ -381,7 +379,6 @@ Play Tetris
           matrixSweep();
           return;
         }
-
         if (event.key === "ArrowLeft") {
           keysPressed.ArrowLeft = true;
           currentDirection = -1;
