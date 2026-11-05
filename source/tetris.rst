@@ -139,6 +139,7 @@ Play Tetris
       const LOCK_DELAY = 1000;
       let currentPiece = null;
       let nextPiece = null;
+      let allowConsecutive = false;
 
       function collide(matrix, player) {
         for (let y = 0; y < player.piece.length; ++y) {
@@ -292,9 +293,10 @@ Play Tetris
         player.piece = player.nextPiece;
         currentPiece = nextPiece;
         nextPiece = randomPiece();
-        while (nextPiece === currentPiece) {
+        while (!allowConsecutive && nextPiece === currentPiece) {
           nextPiece = randomPiece();
         }
+        allowConsecutive = nextPiece !== currentPiece;
         player.nextPiece = cloneMatrix(PIECES[nextPiece]);
         player.position.y = 0;
         player.position.x = Math.floor(matrix[0].length / 2) - Math.floor(player.piece[0].length / 2);
