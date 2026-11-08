@@ -397,7 +397,6 @@ Play Tetris
           arrCounter = 0;
         } else if (event.key === "ArrowDown") {
           keysPressed.ArrowDown = true;
-          // pieceDrop();
         }
       });
 
