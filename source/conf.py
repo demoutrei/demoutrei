@@ -34,6 +34,10 @@ html_theme_options = {
   "show_ai_links": False,
   "nav_links": [
     {
+      "title": "Gists",
+      "url": "https://gists.demoutrei.dev"
+    },
+    {
       "title": "GuideBooks",
       "url": "https://guides.demoutrei.dev"
     },
