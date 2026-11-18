@@ -13,19 +13,19 @@ Projects
 
         Discord API but Python
 
-
-    .. grid-item-card:: guides
-        :link: https://guides.demoutrei.dev
-        :link-type: url
-
-        Collective guidebooks
-
     
     .. grid-item-card:: utils
         :link: https://utils.demoutrei.dev
         :link-type: url
 
         Tools & Utilities
+
+
+    .. grid-item-card:: wiki
+        :link: https://wiki.demoutrei.dev
+        :link-type: url
+
+        Collective wiki
 
 
 .. .. raw:: html
