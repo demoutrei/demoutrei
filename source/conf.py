@@ -38,12 +38,12 @@ html_theme_options = {
       "url": "https://gists.demoutrei.dev"
     },
     {
-      "title": "GuideBooks",
-      "url": "https://guides.demoutrei.dev"
-    },
-    {
       "title": "Utilities",
       "url": "https://utils.demoutrei.dev"
+    },
+    {
+      "title": "Wiki",
+      "url": "https://wiki.demoutrei.dev"
     }
   ]
 }
